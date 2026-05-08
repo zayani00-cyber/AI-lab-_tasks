@@ -1,0 +1,92 @@
+/* 1. Immersive Background & Global Fixes */
+.stApp {
+    background: radial-gradient(circle at 50% -20%, #1e293b 0%, #080c14 100%) !important;
+    color: #f1f5f9;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* Remove the "Streamlit Gap" at the top */
+header {visibility: hidden;}
+[data-testid="stHeader"] {background: rgba(0,0,0,0);}
+
+/* 2. Professional Title with Depth */
+.main-title {
+    background: linear-gradient(135deg, #ffffff 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 900;
+    padding: 40px 0 10px 0;
+    letter-spacing: -2px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+}
+
+/* 3. The "Floating Glass" Search Bar */
+/* Target the Streamlit input container specifically */
+div[data-baseweb="input"] {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    padding: 12px 20px !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4) !important;
+}
+
+div[data-baseweb="input"]:focus-within {
+    border-color: #38bdf8 !important;
+    background-color: rgba(255, 255, 255, 0.07) !important;
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.2) !important;
+}
+
+/* 4. Movie Cards with Neumorphic Glow */
+.movie-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 24px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* 5. Clean Sentiment Badges */
+.badge-pos {
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.2), rgba(56, 189, 248, 0.05));
+    color: #38bdf8;
+    border-left: 3px solid #38bdf8;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-neg {
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.05));
+    color: #ef4444;
+    border-left: 3px solid #ef4444;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* 6. Fix for Streamlit's default button width */
+.stButton > button {
+    border-radius: 12px !important;
+    padding: 10px 24px !important;
+    background-color: #38bdf8 !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
+    border: none !important;
+    transition: 0.3s ease !important;
+}
